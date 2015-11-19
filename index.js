@@ -34,7 +34,7 @@ module.exports = (url, options) => {
                       $('meta[name="twitter:description"]').attr('content') ||
                       $('meta[name="description"]').attr('content');
 
-    let locale = $('meta[property="og:locale"]');
+    let locale = $('meta[property="og:locale"]').attr('content');
 
     return Promise.resolve({
       title       : title       || '',
