@@ -1,7 +1,7 @@
 'use strict';
 
-const got = require('got');
-const isHTML = require('is-html');
+const got     = require('got');
+const isHTML  = require('is-html');
 const cheerio = require('cheerio');
 
 module.exports = (url, options) => {
@@ -41,7 +41,7 @@ module.exports = (url, options) => {
       type        : type        || '',
       url         : url         || '',
       image       : image       || '',
-      site        : title       || '',
+      site        : site        || '',
       description : description || '',
       locale      : locale      || ''
     });
