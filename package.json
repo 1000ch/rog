@@ -1,0 +1,26 @@
+{
+  "name": "rog",
+  "version": "1.0.0",
+  "description": "Fetch open graph data from passing URL.",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/1000ch/rog.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "1000ch",
+    "email": "shogo.sensui@gmail.com",
+    "web": "http://github.com/1000ch"
+  },
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "got": "^5.1.0",
+    "is-html": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.5.0"
+  }
+}
