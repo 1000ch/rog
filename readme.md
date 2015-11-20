@@ -1,4 +1,4 @@
-# rog [![Dependency Status](https://david-dm.org/1000ch/rog.svg)](https://david-dm.org/1000ch/rog)
+# rog [![Build Status](https://travis-ci.org/1000ch/rog.svg?branch=master)](https://travis-ci.org/1000ch/rog) [![Dependency Status](https://david-dm.org/1000ch/rog.svg)](https://david-dm.org/1000ch/rog)
 
 Retrieve open graph data from passing URL.
 
