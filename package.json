@@ -17,10 +17,10 @@
   },
   "dependencies": {
     "cheerio": "^0.19.0",
-    "got": "^5.1.0",
+    "got": "^5.2.0",
     "is-html": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^0.5.0"
+    "ava": "*"
   }
 }
