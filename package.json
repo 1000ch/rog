@@ -3,7 +3,8 @@
   "version": "1.0.3",
   "description": "Retrieve open graph data from passing URL.",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "coveralls": "nyc ava && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,8 @@
     "is-html": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "*"
+    "ava": "*",
+    "coveralls": "^2.11.6",
+    "nyc": "^5.1.1"
   }
 }
