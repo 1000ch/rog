@@ -1,6 +1,6 @@
 {
   "name": "rog",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Retrieve open graph data from passing URL.",
   "scripts": {
     "test": "ava",
@@ -17,7 +17,7 @@
     "web": "http://github.com/1000ch"
   },
   "dependencies": {
-    "cheerio": "^0.19.0",
+    "cheerio": "^0.20.0",
     "got": "^6.1.1",
     "is-html": "^1.0.0"
   },
