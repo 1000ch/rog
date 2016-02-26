@@ -45,5 +45,7 @@ module.exports = (url, options) => {
       description : description || '',
       locale      : locale      || ''
     });
+  }).catch(error => {
+    return Promise.reject(error);
   });
 };
