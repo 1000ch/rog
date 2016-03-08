@@ -1,18 +1,27 @@
 'use strict';
 
-const got     = require('got');
-const isHTML  = require('is-html');
-const cheerio = require('cheerio');
+const got       = require('got');
+const isHTML    = require('is-html');
+const cheerio   = require('cheerio');
+const jschardet = require('jschardet');
+const Iconv     = require('iconv').Iconv;
 
 module.exports = (url, options) => {
 
+  options = options || {};
+  options.encoding = null;
+
   return got(url, options).then(response => {
 
-    if (!isHTML(response.body)) {
+    let result = jschardet.detect(response.body);
+    let iconv = new Iconv(result.encoding, 'UTF-8//TRANSLIT//IGNORE');
+    let body = iconv.convert(response.body).toString();
+
+    if (!isHTML(body)) {
       return Promise.reject('Response is not HTML');
     }
 
-    let $ = cheerio.load(response.body);
+    let $ = cheerio.load(body);
 
     let title = $('meta[property="og:title"]').attr('content') ||
                 $('meta[name="twitter:title"]').attr('content') ||
