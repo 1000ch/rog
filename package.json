@@ -19,7 +19,9 @@
   "dependencies": {
     "cheerio": "^0.20.0",
     "got": "^6.1.1",
-    "is-html": "^1.0.0"
+    "iconv": "^2.1.11",
+    "is-html": "^1.0.0",
+    "jschardet": "^1.4.1"
   },
   "devDependencies": {
     "ava": "*",
