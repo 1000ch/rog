@@ -4,7 +4,7 @@ const got       = require('got');
 const isHTML    = require('is-html');
 const cheerio   = require('cheerio');
 const jschardet = require('jschardet');
-const Iconv     = require('iconv').Iconv;
+const iconv     = require('iconv-lite');
 
 module.exports = (url, options) => {
 
@@ -14,8 +14,7 @@ module.exports = (url, options) => {
   return got(url, options).then(response => {
 
     let result = jschardet.detect(response.body);
-    let iconv = new Iconv(result.encoding, 'UTF-8//TRANSLIT//IGNORE');
-    let body = iconv.convert(response.body).toString();
+    let body = iconv.decode(response.body, result.encoding);
 
     if (!isHTML(body)) {
       return Promise.reject('Response is not HTML');
