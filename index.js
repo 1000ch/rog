@@ -48,7 +48,8 @@ module.exports = (url, options) => {
               $('link[rel="canonical"]').attr('href');
 
     let image = $('meta[property="og:image"]').attr('content') ||
-                $('meta[name="twitter:image"]').attr('content');
+                $('meta[name="twitter:image"]').attr('content') ||
+                $('meta[name="twitter:image:src"]').attr('content');
 
     let site = $('meta[property="og:site_name"]').attr('content') ||
                $('meta[name="twitter:site"]').attr('content');
