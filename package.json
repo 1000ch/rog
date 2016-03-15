@@ -26,6 +26,6 @@
   "devDependencies": {
     "ava": "*",
     "coveralls": "^2.11.6",
-    "nyc": "^5.5.0"
+    "nyc": "^6.1.1"
   }
 }
