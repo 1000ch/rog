@@ -1,0 +1,10 @@
+{
+  "name": "rog-plugin-locale",
+  "version": "1.0.0",
+  "description": "URL plugin for rog",
+  "repository": "https://github.com/1000ch/rog/tree/master/packages/rog-plugin-locale",
+  "license": "MIT",
+  "peerDependencies": {
+    "rog": "^2.0.0"
+  }
+}
