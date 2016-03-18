@@ -1,0 +1,7 @@
+{
+  "name": "rog-plugin-description",
+  "version": "1.0.0",
+  "description": "Site description plugin for rog",
+  "repository": "https://github.com/1000ch/rog/tree/master/packages/rog-plugin-description",
+  "license": "MIT"
+}

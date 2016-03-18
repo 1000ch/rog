@@ -1,2 +1,4 @@
 node_modules
 .nyc_output
+packages/*/node_modules
+packages/*/test
