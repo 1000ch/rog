@@ -45,7 +45,7 @@ module.exports = (url, options, parsers) => {
     let keys = Object.keys(parsers);
 
     for (let key of keys) {
-      data[key] = parsers[key]($) || '';
+      data[key] = parsers[key]($, url) || '';
     }
 
     return Promise.resolve(data);
