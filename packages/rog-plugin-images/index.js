@@ -1,12 +1,19 @@
 'use strict';
 
 const URL = require('url');
-const isRelative = require('is-relative');
+const isURL = require('is-url');
 
 module.exports = function($, url) {
   let urls = [];
   $('img').each((index, img) => {
-    urls.push(URL.resolve(url, $(img).attr('src')));
+    let src = $(img).attr('src');
+    if (isURL(src)) {
+      urls.push(src);
+    } else if (src && src.startsWith('data:')) {
+      urls.push(src);
+    } else {
+      urls.push(URL.resolve(url, src));
+    }
   });
   return urls;
 };
