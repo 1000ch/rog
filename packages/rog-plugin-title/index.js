@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function($) {
-  return $('meta[property="og:description"]').attr('content') ||
-         $('meta[name="twitter:description"]').attr('content') ||
-         $('meta[name="description"]').attr('content');
+  return $('meta[property="og:title"]').attr('content') ||
+         $('meta[name="twitter:title"]').attr('content') ||
+         $('meta[name="title"]').attr('content');
 };
