@@ -11,7 +11,7 @@ module.exports = function($, url) {
       urls.push(src);
     } else if (src && src.startsWith('data:')) {
       urls.push(src);
-    } else {
+    } else if (src) {
       urls.push(URL.resolve(url, src));
     }
   });
