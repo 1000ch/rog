@@ -1,11 +1,11 @@
 'use strict';
 
-const got       = require('got');
-const isURL     = require('is-url');
-const isHTML    = require('is-html');
-const cheerio   = require('cheerio');
+const got = require('got');
+const isURL = require('is-url');
+const isHTML = require('is-html');
+const cheerio = require('cheerio');
 const jschardet = require('jschardet');
-const iconv     = require('iconv-lite');
+const iconv = require('iconv-lite');
 
 module.exports = (url, options, parsers) => {
   if (!isURL(url)) {

@@ -3,7 +3,8 @@
   "version": "2.0.1",
   "description": "Retrieve open graph data from passing URL.",
   "scripts": {
-    "test": "ava",
+    "lint": "eslint --ignore-pattern=test --ignore-pattern=node_modules .",
+    "test": "npm run lint && ava",
     "coveralls": "nyc ava && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -25,8 +26,13 @@
     "jschardet": "^1.4.1"
   },
   "devDependencies": {
+    "@1000ch/eslint-config": "^0.4.0",
     "ava": "*",
     "coveralls": "^2.11.6",
+    "eslint": "^2.7.0",
     "nyc": "^6.1.1"
+  },
+  "eslintConfig": {
+    "extends": "@1000ch"
   }
 }
