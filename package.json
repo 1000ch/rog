@@ -1,6 +1,6 @@
 {
   "name": "rog",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Retrieve open graph data from passing URL.",
   "scripts": {
     "lint": "eslint --ignore-pattern=test --ignore-pattern=node_modules .",
