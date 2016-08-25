@@ -18,7 +18,7 @@
     "web": "http://github.com/1000ch"
   },
   "dependencies": {
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.22.0",
     "got": "^6.3.0",
     "iconv-lite": "^0.4.13",
     "is-html": "^1.0.0",
