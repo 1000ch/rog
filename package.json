@@ -26,10 +26,10 @@
     "jschardet": "^1.4.1"
   },
   "devDependencies": {
-    "@1000ch/eslint-config": "^2.2.2",
+    "@1000ch/eslint-config": "^2.4.0",
     "ava": "0.16.0",
     "coveralls": "^2.11.14",
-    "eslint": "^3.6.0",
+    "eslint": "^3.8.1",
     "nyc": "^8.3.0"
   },
   "eslintConfig": {
