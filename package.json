@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "cheerio": "^0.22.0",
-    "got": "^6.5.0",
+    "got": "^6.6.3",
     "iconv-lite": "^0.4.13",
     "is-html": "^1.0.0",
     "is-url": "^1.2.2",
