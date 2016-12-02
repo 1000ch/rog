@@ -17,6 +17,13 @@
     "email": "shogo.sensui@gmail.com",
     "web": "http://github.com/1000ch"
   },
+  "keywords": [
+    "ogp",
+    "opengraph",
+    "meta",
+    "twitter",
+    "facebook"
+  ],
   "dependencies": {
     "cheerio": "^0.22.0",
     "got": "^6.6.3",
