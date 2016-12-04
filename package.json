@@ -37,7 +37,7 @@
     "ava": "0.17.0",
     "coveralls": "^2.11.14",
     "eslint": "^3.9.1",
-    "nyc": "^8.4.0"
+    "nyc": "^10.0.0"
   },
   "eslintConfig": {
     "extends": "@1000ch"
