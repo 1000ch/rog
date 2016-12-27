@@ -7,10 +7,7 @@
     "test": "npm run lint && ava",
     "coveralls": "nyc ava && nyc report --reporter=text-lcov | coveralls"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/1000ch/rog.git"
-  },
+  "repository": "1000ch/rog",
   "license": "MIT",
   "author": {
     "name": "1000ch",
@@ -33,13 +30,20 @@
     "jschardet": "^1.4.1"
   },
   "devDependencies": {
-    "@1000ch/eslint-config": "^2.5.0",
+    "@1000ch/eslint-config": "^2.7.0",
     "ava": "0.17.0",
     "coveralls": "^2.11.14",
-    "eslint": "^3.9.1",
+    "eslint": "^3.12.2",
     "nyc": "^10.0.0"
   },
   "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
     "extends": "@1000ch"
   }
 }

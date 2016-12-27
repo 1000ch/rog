@@ -1,16 +1,16 @@
 import test from 'ava';
-import rog from '../';
+import rog from './';
 
-test('resolve with fixed format json', async function (t) {
+test('resolve with fixed format json', async t => {
   let data = await rog('https://www.npmjs.com', null, {
-    title       : require('../packages/rog-plugin-title'),
-    type        : require('../packages/rog-plugin-type'),
-    url         : require('../packages/rog-plugin-url'),
-    image       : require('../packages/rog-plugin-image'),
-    images      : require('../packages/rog-plugin-images'),
-    sitename    : require('../packages/rog-plugin-sitename'),
-    description : require('../packages/rog-plugin-description'),
-    locale      : require('../packages/rog-plugin-locale'),
+    title       : require('./packages/rog-plugin-title'),
+    type        : require('./packages/rog-plugin-type'),
+    url         : require('./packages/rog-plugin-url'),
+    image       : require('./packages/rog-plugin-image'),
+    images      : require('./packages/rog-plugin-images'),
+    sitename    : require('./packages/rog-plugin-sitename'),
+    description : require('./packages/rog-plugin-description'),
+    locale      : require('./packages/rog-plugin-locale')
   });
 
   t.plan(8);
@@ -24,7 +24,7 @@ test('resolve with fixed format json', async function (t) {
   t.not(data.locale, undefined, 'locale is not undefined');
 });
 
-test('reject if argument is none', async function (t) {
+test('reject if argument is none', async t => {
   try {
     await rog();
   } catch (error) {
@@ -33,7 +33,7 @@ test('reject if argument is none', async function (t) {
   }
 });
 
-test('reject if response is not HTML', async function (t) {
+test('reject if response is not HTML', async t => {
   try {
     await rog('http://placehold.it/1x1');
   } catch (error) {

@@ -4,8 +4,9 @@ Retrieve open graph data from passing URL.
 
 [![Build Status](https://travis-ci.org/1000ch/rog.svg?branch=master)](https://travis-ci.org/1000ch/rog)
 [![Dependency Status](https://david-dm.org/1000ch/rog.svg)](https://david-dm.org/1000ch/rog)
+[![devDependency Status](https://david-dm.org/1000ch/rog/dev-status.svg)](https://david-dm.org/1000ch/rog?type=dev)
 
-## Installation
+## Install
 
 Install `rog` and its plugins.
 
@@ -41,4 +42,4 @@ rog('http://google.com', {}, {
 
 ## License
 
-MIT: http://1000ch.mit-license.org
+[MIT](https://1000ch.mit-license.org) © [Shogo Sensui](https://github.com/1000ch)
