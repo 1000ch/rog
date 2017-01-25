@@ -14,6 +14,7 @@ module.exports = (url, options, parsers) => {
 
   options = options || {};
   options.encoding = null;
+  options.timeout = 2000;
   parsers = parsers || {};
 
   return got(url, options).then(response => {
