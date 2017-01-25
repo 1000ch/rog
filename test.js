@@ -2,7 +2,7 @@ import test from 'ava';
 import rog from './';
 
 test('resolve with fixed format json', async t => {
-  let data = await rog('https://www.npmjs.com', null, {
+  let data = await rog('https://google.com', null, {
     title       : require('./packages/rog-plugin-title'),
     type        : require('./packages/rog-plugin-type'),
     url         : require('./packages/rog-plugin-url'),
@@ -18,10 +18,28 @@ test('resolve with fixed format json', async t => {
   t.not(data.type, undefined, 'type is not undefined');
   t.not(data.url, undefined, 'url is not undefined');
   t.not(data.image, undefined, 'image is not undefined');
-  t.not(data.images.length, 0, 'images is not empty');
+  t.is(data.images.length, 0, 'images is empty');
   t.not(data.sitename, undefined, 'sitename is not undefined');
   t.not(data.description, undefined, 'description is not undefined');
   t.not(data.locale, undefined, 'locale is not undefined');
+});
+
+test('throw error with invalid URL', async t => {
+  try {
+    await rog('https://ppppppp.co.jp', null, {});
+  } catch (error) {
+    t.plan(1);
+    t.pass(error);
+  }
+});
+
+test('throw error with invalid URL', async t => {
+  try {
+    await rog('https://pretty.me/area/PRE13/ARE8/SUB803/100000002462/', null, {});
+  } catch (error) {
+    t.plan(1);
+    t.pass(error);
+  }
 });
 
 test('reject if argument is none', async t => {
