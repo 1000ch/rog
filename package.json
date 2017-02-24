@@ -3,8 +3,7 @@
   "version": "2.3.0",
   "description": "Retrieve open graph data from passing URL.",
   "scripts": {
-    "lint": "eslint --ignore-pattern=test --ignore-pattern=node_modules .",
-    "test": "npm run lint && ava",
+    "test": "xo && ava --verbose",
     "coveralls": "nyc ava && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": "1000ch/rog",
@@ -21,29 +20,21 @@
     "twitter",
     "facebook"
   ],
+  "xo": {
+    "space": 2
+  },
   "dependencies": {
     "cheerio": "^0.22.0",
-    "got": "^6.6.3",
-    "iconv-lite": "^0.4.13",
-    "is-html": "^1.0.0",
+    "got": "^6.7.1",
+    "iconv-lite": "^0.4.15",
+    "is-html": "^1.1.0",
     "is-url": "^1.2.2",
     "jschardet": "^1.4.1"
   },
   "devDependencies": {
-    "@1000ch/eslint-config": "^2.7.0",
-    "ava": "0.17.0",
+    "xo": "^0.17.0",
+    "ava": "^0.18.2",
     "coveralls": "^2.11.14",
-    "eslint": "^3.12.2",
     "nyc": "^10.0.0"
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 8,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "extends": "@1000ch"
   }
 }
