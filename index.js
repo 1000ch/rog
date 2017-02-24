@@ -8,13 +8,13 @@ const jschardet = require('jschardet');
 const iconv = require('iconv-lite');
 
 const getBody = response => {
-  const header = response.header || {};
-  const body = response.body;
+  const headers = response.headers || {};
+  const body = response.body || '';
 
-  const contentType = header['content-type'] || '';
+  const contentType = headers['content-type'] || '';
   const matches = contentType.match(/charset=(.+)/);
   if (matches !== null) {
-    return body.toString(matches[1]);
+    return iconv.decode(body, matches[1]);
   }
 
   const result = jschardet.detect(body);
@@ -29,10 +29,10 @@ const getBody = response => {
 
   const charset = head[1].match(/<meta[^>]*[\s;]+charset\s*=\s*["']?([\w\-_]+)["']?/i);
   if (charset) {
-    return iconv.decode(response.body, charset[1].trim());
+    return iconv.decode(body, charset[1].trim());
   }
 
-  return response.body.toString('utf8');
+  return body.toString('utf8');
 };
 
 module.exports = (url, options, parsers) => {
