@@ -35,17 +35,19 @@ const getBody = response => {
   return body.toString('utf8');
 };
 
-module.exports = (url, options, parsers) => {
+const normalize = options => {
+  options = options || {};
+  options.encoding = null;
+  options.timeout = 2000;
+  return options;
+};
+
+module.exports = (url, options, parsers = {}) => {
   if (!isURL(url)) {
     return Promise.reject(`URL is invalid: ${url}`);
   }
 
-  options = options || {};
-  options.encoding = null;
-  options.timeout = 2000;
-  parsers = parsers || {};
-
-  return got(url, options).then(response => {
+  return got(url, normalize(options)).then(response => {
     const body = getBody(response);
 
     if (!isHTML(body)) {
