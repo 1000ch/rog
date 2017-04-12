@@ -44,22 +44,24 @@ const normalize = options => {
 
 module.exports = (url, options, parsers = {}) => {
   if (!isURL(url)) {
-    return Promise.reject(`URL is invalid: ${url}`);
+    return Promise.reject(new Error(`URL is invalid: ${url}`));
   }
 
-  return got(url, normalize(options)).then(response => {
-    const body = getBody(response);
+  return new Promise((resolve, reject) => {
+    got(url, normalize(options)).then(response => {
+      const body = getBody(response);
 
-    if (!isHTML(body)) {
-      return Promise.reject('Response is not HTML');
-    }
+      if (!isHTML(body)) {
+        return reject(new Error('Response is not HTML'));
+      }
 
-    const $ = cheerio.load(body);
-    let data = {};
-    for (let key of Object.keys(parsers)) {
-      data[key] = parsers[key]($, url) || '';
-    }
+      const $ = cheerio.load(body);
+      const data = {};
+      for (const key of Object.keys(parsers)) {
+        data[key] = parsers[key]($, url) || '';
+      }
 
-    return Promise.resolve(data);
+      resolve(data);
+    });
   });
 };
