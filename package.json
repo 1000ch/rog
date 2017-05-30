@@ -25,16 +25,16 @@
   },
   "dependencies": {
     "cheerio": "^0.22.0",
-    "got": "^6.7.1",
+    "got": "^7.0.0",
     "iconv-lite": "^0.4.15",
     "is-html": "^1.1.0",
     "is-url": "^1.2.2",
     "jschardet": "^1.4.1"
   },
   "devDependencies": {
-    "ava": "*",
+    "ava": "^0.19.1",
     "coveralls": "^2.11.14",
     "nyc": "^10.0.0",
-    "xo": "*"
+    "xo": "^0.18.2"
   }
 }
