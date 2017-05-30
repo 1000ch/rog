@@ -2,10 +2,13 @@
 
 const got = require('got');
 const isURL = require('is-url');
+const binaryExtensions = require('binary-extensions');
 const isHTML = require('is-html');
 const cheerio = require('cheerio');
 const jschardet = require('jschardet');
 const iconv = require('iconv-lite');
+
+const binaries = new RegExp(`(${binaryExtensions.map(ext => `.${ext}`).join('|')})$`);
 
 const getBody = response => {
   const headers = response.headers || {};
@@ -47,6 +50,10 @@ module.exports = (url, options, parsers = {}) => {
     return Promise.reject(new Error(`URL is invalid: ${url}`));
   }
 
+  if (url.match(binaries)) {
+    return Promise.reject(new Error(`Binary is not supported: ${url}`));
+  }
+
   return new Promise((resolve, reject) => {
     got(url, normalize(options)).then(response => {
       const body = getBody(response);
@@ -62,6 +69,6 @@ module.exports = (url, options, parsers = {}) => {
       }
 
       resolve(data);
-    });
+    }, reject);
   });
 };

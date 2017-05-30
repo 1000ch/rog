@@ -24,6 +24,7 @@
     "space": 2
   },
   "dependencies": {
+    "binary-extensions": "^1.8.0",
     "cheerio": "^0.22.0",
     "got": "^7.0.0",
     "iconv-lite": "^0.4.15",
