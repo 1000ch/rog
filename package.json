@@ -26,7 +26,7 @@
   "dependencies": {
     "binary-extensions": "^1.11.0",
     "cheerio": "^0.22.0",
-    "got": "^8.0.1",
+    "got": "^8.2.0",
     "iconv-lite": "^0.4.19",
     "is-html": "^1.1.0",
     "is-url": "^1.2.2",
