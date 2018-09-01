@@ -6,6 +6,9 @@
     "test": "xo && ava --verbose",
     "coveralls": "nyc ava && nyc report --reporter=text-lcov | coveralls"
   },
+  "engines": {
+    "node": ">=8"
+  },
   "repository": "1000ch/rog",
   "license": "MIT",
   "author": {
@@ -26,7 +29,7 @@
   "dependencies": {
     "binary-extensions": "^1.11.0",
     "cheerio": "^0.22.0",
-    "got": "^8.2.0",
+    "got": "^9.2.0",
     "iconv-lite": "^0.4.19",
     "is-html": "^1.1.0",
     "is-url": "^1.2.2",
@@ -35,7 +38,7 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "coveralls": "^3.0.0",
-    "nyc": "^11.4.1",
-    "xo": "^0.20.3"
+    "nyc": "^13.0.1",
+    "xo": "^0.22.0"
   }
 }
