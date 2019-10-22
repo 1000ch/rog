@@ -73,23 +73,23 @@ test('parse iso-8859-1 encoded HTML', async t => {
 test('throw error with invalid URL', async t => {
   try {
     await rog('https://pretty.me/area/PRE13/ARE8/SUB803/100000002462/', null, {});
-  } catch (err) {
-    t.pass(err);
+  } catch (error) {
+    t.pass(error);
   }
 });
 
 test('reject if argument is none', async t => {
   try {
     await rog();
-  } catch (err) {
-    t.pass(err);
+  } catch (error) {
+    t.pass(error);
   }
 });
 
 test('reject if response is not HTML', async t => {
   try {
     await rog('https://cloud.githubusercontent.com/assets/1800018/24595005/62981086-186d-11e7-9a61-aa31f5d8cb72.gif');
-  } catch (err) {
-    t.pass(err);
+  } catch (error) {
+    t.pass(error);
   }
 });

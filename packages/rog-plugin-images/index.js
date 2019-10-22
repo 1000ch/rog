@@ -1,6 +1,6 @@
 'use strict';
 
-const URL = require('url');
+const {URL} = require('url');
 const isURL = require('is-url');
 
 module.exports = function ($, url) {
@@ -12,7 +12,7 @@ module.exports = function ($, url) {
     } else if (src && src.startsWith('data:')) {
       urls.push(src);
     } else if (src) {
-      urls.push(URL.resolve(url, src));
+      urls.push(new URL(src, url));
     }
   });
   return urls;

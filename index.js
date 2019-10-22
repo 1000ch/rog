@@ -45,30 +45,31 @@ const normalize = options => {
   return options;
 };
 
-module.exports = (url, options, parsers = {}) => {
+module.exports = async (url, options, parsers = {}) => {
   if (!isURL(url)) {
-    return Promise.reject(new Error(`URL is invalid: ${url}`));
+    throw new Error(`URL is invalid: ${url}`);
   }
 
   if (url.match(binaries)) {
-    return Promise.reject(new Error(`Binary is not supported: ${url}`));
+    throw new Error(`Binary is not supported: ${url}`);
   }
 
-  return new Promise((resolve, reject) => {
-    got(url, normalize(options)).then(response => {
-      const body = getBody(response);
+  try {
+    const response = await got(url, normalize(options));
+    const body = getBody(response);
 
-      if (!isHTML(body)) {
-        return reject(new Error('Response is not HTML'));
-      }
+    if (!isHTML(body)) {
+      throw new Error('Response is not HTML');
+    }
 
-      const $ = cheerio.load(body);
-      const data = {};
-      for (const key of Object.keys(parsers)) {
-        data[key] = parsers[key]($, url) || '';
-      }
+    const $ = cheerio.load(body);
+    const data = {};
+    for (const key of Object.keys(parsers)) {
+      data[key] = parsers[key]($, url) || '';
+    }
 
-      resolve(data);
-    }, reject);
-  });
+    return data;
+  } catch (error) {
+    throw error;
+  }
 };
