@@ -1,6 +1,5 @@
 'use strict';
 
-const {URL} = require('url');
 const isURL = require('is-url');
 
 module.exports = function ($, url) {

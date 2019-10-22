@@ -15,7 +15,7 @@ const getBody = response => {
   const body = response.body || '';
 
   const contentType = headers['content-type'] || '';
-  const matches = contentType.match(/charset=(.+)/);
+  const matches = contentType.match(/charset=(?<charset>.+)/);
   if (matches !== null) {
     return iconv.decode(body, matches[1]);
   }
@@ -25,12 +25,12 @@ const getBody = response => {
     return iconv.decode(body, result.encoding);
   }
 
-  const head = body.toString('ascii').match(/<head[\s>]([\s\S]*?)<\/head>/i);
+  const head = body.toString('ascii').match(/<head[\s>](?<head>[\s\S]*?)<\/head>/i);
   if (!head) {
     return body.toString('utf8');
   }
 
-  const charset = head[1].match(/<meta[^>]*[\s;]+charset\s*=\s*["']?([\w\-_]+)["']?/i);
+  const charset = head[1].match(/<meta[^>]*[\s;]+charset\s*=\s*["']?(?<charset>[\w\-_]+)["']?/i);
   if (charset) {
     return iconv.decode(body, charset[1].trim());
   }
@@ -54,22 +54,18 @@ module.exports = async (url, options, parsers = {}) => {
     throw new Error(`Binary is not supported: ${url}`);
   }
 
-  try {
-    const response = await got(url, normalize(options));
-    const body = getBody(response);
+  const response = await got(url, normalize(options));
+  const body = getBody(response);
 
-    if (!isHTML(body)) {
-      throw new Error('Response is not HTML');
-    }
-
-    const $ = cheerio.load(body);
-    const data = {};
-    for (const key of Object.keys(parsers)) {
-      data[key] = parsers[key]($, url) || '';
-    }
-
-    return data;
-  } catch (error) {
-    throw error;
+  if (!isHTML(body)) {
+    throw new Error('Response is not HTML');
   }
+
+  const $ = cheerio.load(body);
+  const data = {};
+  for (const key of Object.keys(parsers)) {
+    data[key] = parsers[key]($, url) || '';
+  }
+
+  return data;
 };
