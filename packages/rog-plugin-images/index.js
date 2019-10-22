@@ -2,7 +2,7 @@
 
 const isURL = require('is-url');
 
-module.exports = function ($, url) {
+module.exports = ($, url) => {
   const urls = [];
   $('img').each((index, img) => {
     const src = $(img).attr('src');

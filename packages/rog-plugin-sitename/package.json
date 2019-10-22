@@ -1,10 +1,10 @@
 {
   "name": "rog-plugin-sitename",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Site name plugin for rog",
   "repository": "https://github.com/1000ch/rog/tree/master/packages/rog-plugin-sitename",
   "license": "MIT",
   "peerDependencies": {
-    "rog": "^2.0.0"
+    "rog": "^3.0.0"
   }
 }

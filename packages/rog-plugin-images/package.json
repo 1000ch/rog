@@ -1,11 +1,11 @@
 {
   "name": "rog-plugin-images",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Image URLs in HTML document plugin for rog",
   "repository": "https://github.com/1000ch/rog/tree/master/packages/rog-plugin-images",
   "license": "MIT",
   "peerDependencies": {
-    "rog": "^2.0.0"
+    "rog": "^3.0.0"
   },
   "dependencies": {
     "is-url": "^1.2.1"
