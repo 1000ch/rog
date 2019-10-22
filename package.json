@@ -27,13 +27,13 @@
     "space": 2
   },
   "dependencies": {
-    "binary-extensions": "^1.11.0",
+    "binary-extensions": "^2.0.0",
     "cheerio": "^0.22.0",
     "got": "^9.2.0",
-    "iconv-lite": "^0.4.19",
-    "is-html": "^1.1.0",
+    "iconv-lite": "^0.5.0",
+    "is-html": "^2.0.0",
     "is-url": "^1.2.2",
-    "jschardet": "^1.6.0"
+    "jschardet": "^2.1.0"
   },
   "devDependencies": {
     "ava": "^2.4.0",
