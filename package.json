@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "Retrieve open graph data from passing URL.",
   "scripts": {
-    "bootstrap": "lerna bootstrap --no-ci",
+    "bootstrap": "lerna bootstrap",
     "test": "lerna run test",
     "clean": "lerna clean --yes",
     "publish": "lerna publish"
@@ -40,8 +40,8 @@
     "rog-plugin-url": "file:packages/rog-plugin-url"
   },
   "devDependencies": {
-    "ava": "3.5.0",
+    "ava": "^3.5.0",
     "lerna": "^3.20.2",
-    "xo": "0.28.0"
+    "xo": "^0.28.0"
   }
 }
