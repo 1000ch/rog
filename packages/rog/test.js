@@ -3,14 +3,14 @@ import rog from '.';
 
 test('parse utf-8 encoded HTML', async t => {
   const data = await rog('https://google.com', null, {
-    title: require('./packages/rog-plugin-title'),
-    type: require('./packages/rog-plugin-type'),
-    url: require('./packages/rog-plugin-url'),
-    image: require('./packages/rog-plugin-image'),
-    images: require('./packages/rog-plugin-images'),
-    sitename: require('./packages/rog-plugin-sitename'),
-    description: require('./packages/rog-plugin-description'),
-    locale: require('./packages/rog-plugin-locale')
+    title: require('../rog-plugin-title'),
+    type: require('../rog-plugin-type'),
+    url: require('../rog-plugin-url'),
+    image: require('../rog-plugin-image'),
+    images: require('../rog-plugin-images'),
+    sitename: require('../rog-plugin-sitename'),
+    description: require('../rog-plugin-description'),
+    locale: require('../rog-plugin-locale')
   });
 
   t.plan(8);
@@ -26,14 +26,14 @@ test('parse utf-8 encoded HTML', async t => {
 
 test('parse EUC-JP encoded HTML', async t => {
   const data = await rog('https://mixi.jp/', null, {
-    title: require('./packages/rog-plugin-title'),
-    type: require('./packages/rog-plugin-type'),
-    url: require('./packages/rog-plugin-url'),
-    image: require('./packages/rog-plugin-image'),
-    images: require('./packages/rog-plugin-images'),
-    sitename: require('./packages/rog-plugin-sitename'),
-    description: require('./packages/rog-plugin-description'),
-    locale: require('./packages/rog-plugin-locale')
+    title: require('../rog-plugin-title'),
+    type: require('../rog-plugin-type'),
+    url: require('../rog-plugin-url'),
+    image: require('../rog-plugin-image'),
+    images: require('../rog-plugin-images'),
+    sitename: require('../rog-plugin-sitename'),
+    description: require('../rog-plugin-description'),
+    locale: require('../rog-plugin-locale')
   });
 
   t.plan(8);
@@ -49,14 +49,14 @@ test('parse EUC-JP encoded HTML', async t => {
 
 test('parse iso-8859-1 encoded HTML', async t => {
   const data = await rog('http://www.mhlw.go.jp/index.shtml', null, {
-    title: require('./packages/rog-plugin-title'),
-    type: require('./packages/rog-plugin-type'),
-    url: require('./packages/rog-plugin-url'),
-    image: require('./packages/rog-plugin-image'),
-    images: require('./packages/rog-plugin-images'),
-    sitename: require('./packages/rog-plugin-sitename'),
-    description: require('./packages/rog-plugin-description'),
-    locale: require('./packages/rog-plugin-locale')
+    title: require('../rog-plugin-title'),
+    type: require('../rog-plugin-type'),
+    url: require('../rog-plugin-url'),
+    image: require('../rog-plugin-image'),
+    images: require('../rog-plugin-images'),
+    sitename: require('../rog-plugin-sitename'),
+    description: require('../rog-plugin-description'),
+    locale: require('../rog-plugin-locale')
   });
 
   t.plan(8);

@@ -2,8 +2,35 @@
   "name": "rog-plugin-locale",
   "version": "2.0.0",
   "description": "URL plugin for rog",
-  "repository": "https://github.com/1000ch/rog/tree/master/packages/rog-plugin-locale",
+  "scripts": {
+    "test": "xo && ava --verbose"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1000ch/rog.git"
+  },
   "license": "MIT",
+  "author": {
+    "name": "Shogo Sensui",
+    "email": "shogosensui@gmail.com",
+    "web": "https://github.com/1000ch"
+  },
+  "keywords": [
+    "ogp",
+    "opengraph",
+    "meta",
+    "twitter",
+    "facebook"
+  ],
+  "xo": {
+    "space": 2
+  },
+  "devDependencies": {
+    "rog": "file:../rog"
+  },
   "peerDependencies": {
     "rog": "^3.0.0"
   }
