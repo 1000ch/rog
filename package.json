@@ -3,13 +3,18 @@
   "version": "3.0.0",
   "description": "Retrieve open graph data from passing URL.",
   "scripts": {
-    "test": "xo && ava --verbose",
-    "coveralls": "nyc ava && nyc report --reporter=text-lcov | coveralls"
+    "bootstrap": "lerna bootstrap --no-ci",
+    "test": "lerna run test",
+    "clean": "lerna clean --yes",
+    "publish": "lerna publish"
   },
   "engines": {
     "node": ">=10"
   },
-  "repository": "1000ch/rog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1000ch/rog.git"
+  },
   "license": "MIT",
   "author": {
     "name": "Shogo Sensui",
@@ -23,22 +28,21 @@
     "twitter",
     "facebook"
   ],
-  "xo": {
-    "space": 2
-  },
   "dependencies": {
-    "binary-extensions": "^2.0.0",
-    "cheerio": "^0.22.0",
-    "got": "^9.2.0",
-    "iconv-lite": "^0.5.0",
-    "is-html": "^2.0.0",
-    "is-url": "^1.2.2",
-    "jschardet": "^2.1.0"
+    "rog": "file:packages/rog",
+    "rog-plugin-description": "file:packages/rog-plugin-description",
+    "rog-plugin-image": "file:packages/rog-plugin-image",
+    "rog-plugin-images": "file:packages/rog-plugin-images",
+    "rog-plugin-locale": "file:packages/rog-plugin-locale",
+    "rog-plugin-sitename": "file:packages/rog-plugin-sitename",
+    "rog-plugin-title": "file:packages/rog-plugin-title",
+    "rog-plugin-type": "file:packages/rog-plugin-type",
+    "rog-plugin-url": "file:packages/rog-plugin-url"
   },
   "devDependencies": {
     "ava": "^2.4.0",
-    "coveralls": "^3.0.0",
-    "nyc": "^14.1.1",
+    "lerna": "^3.20.2",
+    "rog": "file:../rog",
     "xo": "^0.25.3"
   }
 }
