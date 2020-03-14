@@ -1,6 +1,6 @@
 {
   "name": "rog-plugin-type",
-  "version": "2.0.0",
+  "version": "3.0.1",
   "description": "Type plugin for rog",
   "scripts": {
     "test": "xo && ava --verbose"
