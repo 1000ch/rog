@@ -1,5 +1,5 @@
-import test from 'ava';
-import rog from 'rog';
+const test = require('ava');
+const rog = require('.');
 
 test('retrieve url', async t => {
   const data = await rog('https://google.co.jp/', null, {

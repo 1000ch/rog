@@ -1,5 +1,5 @@
-import test from 'ava';
-import rog from '.';
+const test = require('ava');
+const rog = require('.');
 
 test('parse utf-8 encoded HTML', async t => {
   const data = await rog('https://google.com', null, {
