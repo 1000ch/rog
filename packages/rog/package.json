@@ -1,7 +1,7 @@
 {
   "name": "rog",
   "version": "3.0.1",
-  "description": "Retrieve open graph data from passing URL.",
+  "description": "Retrieve open graph data by passing URL.",
   "scripts": {
     "test": "xo && ava --verbose"
   },

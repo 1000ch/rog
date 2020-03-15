@@ -1,7 +1,7 @@
 {
   "name": "rog-plugin-locale",
   "version": "3.0.1",
-  "description": "URL plugin for rog",
+  "description": "Locale plugin for rog",
   "scripts": {
     "test": "xo && ava --verbose"
   },
