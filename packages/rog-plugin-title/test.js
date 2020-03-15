@@ -1,5 +1,5 @@
 const test = require('ava');
-const rog = require('.');
+const rog = require('rog');
 
 test('retrieve title', async t => {
   const data = await rog('https://google.co.jp/', null, {
