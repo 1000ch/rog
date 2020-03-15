@@ -1,7 +1,6 @@
 {
   "name": "rog",
-  "version": "3.0.0",
-  "description": "Retrieve open graph data by passing URL.",
+  "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "test": "lerna run test",
@@ -11,23 +10,7 @@
   "engines": {
     "node": ">=10"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/1000ch/rog.git"
-  },
   "license": "MIT",
-  "author": {
-    "name": "Shogo Sensui",
-    "email": "shogosensui@gmail.com",
-    "web": "https://github.com/1000ch"
-  },
-  "keywords": [
-    "ogp",
-    "opengraph",
-    "meta",
-    "twitter",
-    "facebook"
-  ],
   "dependencies": {
     "rog": "file:packages/rog",
     "rog-plugin-description": "file:packages/rog-plugin-description",

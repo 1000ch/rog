@@ -28,8 +28,9 @@ rog('http://google.com', {}, {
 });
 ```
 
-## Plugins
+## Packages
 
+- [`rog`](packages/rog): core package
 - [`rog-plugin-description`](packages/rog-plugin-description): a plugin to analyze `<meta property="og:description">` and others.
 - [`rog-plugin-image`](packages/rog-plugin-image): a plugin to analyze `<meta property="og:image">` and others.
 - [`rog-plugin-images`](packages/rog-plugin-images): a plugin to analyze `<img>`s written in `<body>`.
