@@ -1,10 +1,9 @@
 # rog
 
-Retrieve open graph data from passing URL.
+Retrieve open graph data by passing URL.
 
 [![Build Status](https://travis-ci.org/1000ch/rog.svg?branch=master)](https://travis-ci.org/1000ch/rog)
-[![Dependency Status](https://david-dm.org/1000ch/rog.svg)](https://david-dm.org/1000ch/rog)
-[![devDependency Status](https://david-dm.org/1000ch/rog/dev-status.svg)](https://david-dm.org/1000ch/rog?type=dev)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 ## Install
 
