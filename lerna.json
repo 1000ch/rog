@@ -4,6 +4,6 @@
     "packages/*"
   ],
   "npmClientArgs": [
-    "--no-lockfile"
+    "--no-ci"
   ]
 }

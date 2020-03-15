@@ -3,8 +3,11 @@
   "version": "3.0.1",
   "description": "Image URL plugin for rog",
   "scripts": {
+    "build": "tsc",
     "test": "xo && ava --verbose"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=10"
   },

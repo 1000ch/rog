@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": ["es2018", "DOM"],
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "types": ["@types/node"]
+  },
+  "include": [
+    "src/*.ts"
+  ],
+  "exclude": []
+}
