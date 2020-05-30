@@ -1,6 +1,6 @@
 {
   "name": "rog",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Retrieve open graph data by passing URL.",
   "scripts": {
     "build": "tsc",
