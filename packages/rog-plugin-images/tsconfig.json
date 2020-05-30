@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2018",
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "lib": ["es2018", "DOM"],
     "declaration": true,
@@ -9,8 +9,7 @@
     "strict": true,
     "outDir": "./dist",
     "baseUrl": ".",
-    "allowSyntheticDefaultImports": true,
-    "types": ["@types/node"]
+    "esModuleInterop": true
   },
   "include": [
     "src/*.ts"
