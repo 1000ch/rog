@@ -2,11 +2,11 @@
   "name": "rog",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --ci",
     "build": "lerna run build",
     "test": "lerna run test",
     "clean": "lerna clean --yes",
-    "prepublish": "npm run build && npm run test",
+    "prepare": "npm run build",
     "publish": "lerna publish"
   },
   "engines": {

@@ -7,4 +7,3 @@ notifications:
   email: false
 install:
   - npm install
-  - npm run bootstrap
