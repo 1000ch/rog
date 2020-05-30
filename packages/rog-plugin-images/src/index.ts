@@ -1,7 +1,8 @@
-import { RogPlugin, RogPluginResponse } from 'rog';
+/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import {RogPlugin, RogPluginResponse} from 'rog';
 import isURL from 'is-url';
 
-const plugin: RogPlugin = function($, url): RogPluginResponse {
+export const rogImages: RogPlugin = ($, url): RogPluginResponse => {
   const urls: string[] = [];
 
   $('img').each((index, img) => {
@@ -9,7 +10,7 @@ const plugin: RogPlugin = function($, url): RogPluginResponse {
 
     if (src && isURL(src)) {
       urls.push(src);
-    } else if (src && src.startsWith('data:')) {
+    } else if (src?.startsWith('data:')) {
       urls.push(src);
     } else if (src) {
       urls.push(new URL(src, url).toString());
@@ -18,5 +19,3 @@ const plugin: RogPlugin = function($, url): RogPluginResponse {
 
   return urls;
 };
-
-export default plugin;

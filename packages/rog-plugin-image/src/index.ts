@@ -1,6 +1,7 @@
-import { RogPlugin, RogPluginResponse } from 'rog';
+/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import {RogPlugin, RogPluginResponse} from 'rog';
 
-const plugin: RogPlugin = function($, url): RogPluginResponse {
+export const rogImage: RogPlugin = ($: CheerioStatic): RogPluginResponse => {
   const records: Record<string, string> = {
     'meta[property="og:image"]': 'content',
     'meta[name="twitter:image"]': 'content',
@@ -17,5 +18,3 @@ const plugin: RogPlugin = function($, url): RogPluginResponse {
 
   return null;
 };
-
-export default plugin;

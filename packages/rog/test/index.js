@@ -1,16 +1,24 @@
 const test = require('ava');
-const rog = require('..');
+const {rog} = require('../../rog');
+const {rogTitle} = require('../../rog-plugin-title');
+const {rogType} = require('../../rog-plugin-type');
+const {rogUrl} = require('../../rog-plugin-url');
+const {rogImage} = require('../../rog-plugin-image');
+const {rogImages} = require('../../rog-plugin-images');
+const {rogSitename} = require('../../rog-plugin-sitename');
+const {rogDescription} = require('../../rog-plugin-description');
+const {rogLocale} = require('../../rog-plugin-locale');
 
 test('parse utf-8 encoded HTML', async t => {
-  const data = await rog('https://google.com', null, {
-    title: require('../rog-plugin-title'),
-    type: require('../rog-plugin-type'),
-    url: require('../rog-plugin-url'),
-    image: require('../rog-plugin-image'),
-    images: require('../rog-plugin-images'),
-    sitename: require('../rog-plugin-sitename'),
-    description: require('../rog-plugin-description'),
-    locale: require('../rog-plugin-locale')
+  const data = await rog('https://google.com', {
+    title: rogTitle,
+    type: rogType,
+    url: rogUrl,
+    image: rogImage,
+    images: rogImages,
+    sitename: rogSitename,
+    description: rogDescription,
+    locale: rogLocale
   });
 
   t.plan(8);
@@ -25,15 +33,15 @@ test('parse utf-8 encoded HTML', async t => {
 });
 
 test('parse EUC-JP encoded HTML', async t => {
-  const data = await rog('https://mixi.jp/', null, {
-    title: require('../rog-plugin-title'),
-    type: require('../rog-plugin-type'),
-    url: require('../rog-plugin-url'),
-    image: require('../rog-plugin-image'),
-    images: require('../rog-plugin-images'),
-    sitename: require('../rog-plugin-sitename'),
-    description: require('../rog-plugin-description'),
-    locale: require('../rog-plugin-locale')
+  const data = await rog('https://mixi.jp/', {
+    title: rogTitle,
+    type: rogType,
+    url: rogUrl,
+    image: rogImage,
+    images: rogImages,
+    sitename: rogSitename,
+    description: rogDescription,
+    locale: rogLocale
   });
 
   t.plan(8);
@@ -48,15 +56,15 @@ test('parse EUC-JP encoded HTML', async t => {
 });
 
 test('parse iso-8859-1 encoded HTML', async t => {
-  const data = await rog('http://www.mhlw.go.jp/index.shtml', null, {
-    title: require('../rog-plugin-title'),
-    type: require('../rog-plugin-type'),
-    url: require('../rog-plugin-url'),
-    image: require('../rog-plugin-image'),
-    images: require('../rog-plugin-images'),
-    sitename: require('../rog-plugin-sitename'),
-    description: require('../rog-plugin-description'),
-    locale: require('../rog-plugin-locale')
+  const data = await rog('http://www.mhlw.go.jp/index.shtml', {
+    title: rogTitle,
+    type: rogType,
+    url: rogUrl,
+    image: rogImage,
+    images: rogImages,
+    sitename: rogSitename,
+    description: rogDescription,
+    locale: rogLocale
   });
 
   t.plan(8);
@@ -72,7 +80,7 @@ test('parse iso-8859-1 encoded HTML', async t => {
 
 test('throw error with invalid URL', async t => {
   try {
-    await rog('https://pretty.me/area/PRE13/ARE8/SUB803/100000002462/', null, {});
+    await rog('https://pretty.me/area/PRE13/ARE8/SUB803/100000002462/', {});
   } catch (error) {
     t.pass(error);
   }

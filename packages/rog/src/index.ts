@@ -1,34 +1,37 @@
-import got, { Response } from 'got';
+/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import got, {Response} from 'got';
 import isURL from 'is-url';
 import isBinaryPath from 'is-binary-path';
 import isHTML from 'is-html';
-import { load } from 'cheerio';
-import { detect } from 'jschardet';
-import { decode } from 'iconv-lite';
+import {load} from 'cheerio';
+import {detect} from 'jschardet';
+import {decode} from 'iconv-lite';
 
 export type RogResponse = Record<string, string | string[]>;
 export type RogPlugin = ($: CheerioStatic, url: string) => RogPluginResponse;
 export type RogPluginResponse = string | string[] | null;
 
 function getBody(response: Response<Buffer>): string {
-  const { body, headers } = response;
-  const contentType = headers['content-type'] || '';
-  const matches = contentType.match(/charset=(?<charset>.+)/);
+  const {body, headers} = response;
+  const hasCharset = new RegExp(/charset=(?<charset>.+)/);
+  const matches = hasCharset.exec(headers['content-type'] ?? '');
   if (matches !== null) {
     return decode(body, matches[1]);
   }
 
   const result = detect(body);
-  if (result && result.encoding && (result.confidence || 0) >= 0.99) {
+  if (result.encoding && (result.confidence || 0) >= 0.99) {
     return decode(body, result.encoding);
   }
 
-  const head = body.toString('ascii').match(/<head[\s>](?<head>[\s\S]*?)<\/head>/i);
+  const hasHead = new RegExp(/<head[\s>](?<head>[\s\S]*?)<\/head>/i);
+  const head = hasHead.exec(body.toString('ascii'));
   if (!head) {
     return body.toString('utf8');
   }
 
-  const charset = head[1].match(/<meta[^>]*[\s;]+charset\s*=\s*["']?(?<charset>[\w\-_]+)["']?/i);
+  const hasMetaCharset = new RegExp(/<meta[^>]*[\s;]+charset\s*=\s*["']?(?<charset>[\w\-_]+)["']?/i);
+  const charset = hasMetaCharset.exec(head[1]);
   if (charset) {
     return decode(body, charset[1].trim());
   }
@@ -36,7 +39,7 @@ function getBody(response: Response<Buffer>): string {
   return body.toString('utf8');
 }
 
-async function rog(url: string, parsers: Record<string, RogPlugin>): Promise<RogResponse> {
+export const rog = async (url: string, parsers: Record<string, RogPlugin>): Promise<RogResponse> => {
   if (!isURL(url)) {
     throw new Error(`URL is invalid: ${url}`);
   }
@@ -59,10 +62,8 @@ async function rog(url: string, parsers: Record<string, RogPlugin>): Promise<Rog
   const $: CheerioStatic = load(body);
   const data: RogResponse = {};
   for (const [key, parse] of Object.entries(parsers)) {
-    data[key] = parse($, url) || '';
+    data[key] = parse($, url) ?? '';
   }
 
   return data;
-}
-
-export default rog;
+};

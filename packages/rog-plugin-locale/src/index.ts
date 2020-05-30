@@ -1,6 +1,7 @@
-import { RogPlugin, RogPluginResponse } from 'rog';
+/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import {RogPlugin, RogPluginResponse} from 'rog';
 
-const plugin: RogPlugin = function($): RogPluginResponse {
+export const rogLocale: RogPlugin = ($: CheerioStatic): RogPluginResponse => {
   const records: Record<string, string> = {
     'meta[property="og:locale"]': 'content'
   };
@@ -15,5 +16,3 @@ const plugin: RogPlugin = function($): RogPluginResponse {
 
   return null;
 };
-
-export default plugin;

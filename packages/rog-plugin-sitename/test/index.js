@@ -1,9 +1,10 @@
 const test = require('ava');
-const rog = require('rog');
+const {rog} = require('rog');
+const {rogSitename} = require('..');
 
 test('retrieve sitename', async t => {
-  const data = await rog('https://google.co.jp/', null, {
-    sitename: require('..')
+  const data = await rog('https://google.co.jp/', {
+    sitename: rogSitename
   });
 
   t.plan(1);
