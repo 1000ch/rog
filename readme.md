@@ -17,10 +17,11 @@ $ npm install rog-plugin-title
 ## Usage
 
 ```javascript
-const rog = require('rog');
+const {rog} = require('rog');
+const {rogTitle} = require('rog-plugin-title');
 
 rog('http://google.com', {
-  title: require('rog-plugin-title')
+  title: rogTitle
 }).then(data => {
   console.log(data.title); // => <meta property="og:title" content="...">
 }).catch(error => {
