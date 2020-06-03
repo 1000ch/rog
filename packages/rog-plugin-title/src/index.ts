@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import {RogPlugin, RogPluginResponse} from 'rog';
 
 export const rogTitle: RogPlugin = ($: CheerioStatic): RogPluginResponse => {

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import {RogPlugin, RogPluginResponse} from 'rog';
 import isURL from 'is-url';
 

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import got, {Response} from 'got';
 import isURL from 'is-url';
 import isBinaryPath from 'is-binary-path';
