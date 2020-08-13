@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "cheerio": "^0.22.0",
-    "got": "^10.7.0",
+    "got": "^11.5.2",
     "iconv-lite": "^0.5.0",
     "is-binary-path": "^2.1.0",
     "is-html": "^2.0.0",
