@@ -31,7 +31,7 @@
     "ava": "^3.8.0",
     "lerna": "^3.22.0",
     "rog": "file:../rog",
-    "typescript": "^3.8.3",
+    "typescript": "^4.0.2",
     "xo": "^0.33.0"
   }
 }
