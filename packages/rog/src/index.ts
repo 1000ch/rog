@@ -2,12 +2,12 @@ import got, {Response} from 'got';
 import isURL from 'is-url';
 import isBinaryPath from 'is-binary-path';
 import isHTML from 'is-html';
-import {load} from 'cheerio';
+import cheerio from 'cheerio';
 import {detect} from 'jschardet';
 import {decode} from 'iconv-lite';
 
 export type RogResponse = Record<string, string | string[]>;
-export type RogPlugin = ($: CheerioStatic, url: string) => RogPluginResponse;
+export type RogPlugin = ($: cheerio.Root, url: string) => RogPluginResponse;
 export type RogPluginResponse = string | string[] | null;
 
 function getBody(response: Response<Buffer>): string {
@@ -58,7 +58,7 @@ export const rog = async (url: string, parsers: Record<string, RogPlugin>): Prom
     throw new Error('Response is not HTML');
   }
 
-  const $: CheerioStatic = load(body);
+  const $ = cheerio.load(body);
   const data: RogResponse = {};
   for (const [key, parse] of Object.entries(parsers)) {
     data[key] = parse($, url) ?? '';

@@ -1,6 +1,6 @@
 import {RogPlugin, RogPluginResponse} from 'rog';
 
-export const rogImage: RogPlugin = ($: CheerioStatic): RogPluginResponse => {
+export const rogImage: RogPlugin = ($: cheerio.Root): RogPluginResponse => {
   const records: Record<string, string> = {
     'meta[property="og:image"]': 'content',
     'meta[name="twitter:image"]': 'content',
