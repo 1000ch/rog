@@ -2,7 +2,7 @@
 
 Retrieve open graph data by passing URL.
 
-[![Build Status](https://travis-ci.org/1000ch/rog.svg?branch=master)](https://travis-ci.org/1000ch/rog)
+![GitHub Actions Status](https://github.com/1000ch/rog/workflows/test/badge.svg?branch=master)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 ## Install
