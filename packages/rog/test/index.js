@@ -1,13 +1,13 @@
-const test = require('ava');
-const {rog} = require('../../rog');
-const {rogTitle} = require('../../rog-plugin-title');
-const {rogType} = require('../../rog-plugin-type');
-const {rogUrl} = require('../../rog-plugin-url');
-const {rogImage} = require('../../rog-plugin-image');
-const {rogImages} = require('../../rog-plugin-images');
-const {rogSitename} = require('../../rog-plugin-sitename');
-const {rogDescription} = require('../../rog-plugin-description');
-const {rogLocale} = require('../../rog-plugin-locale');
+import test from 'ava';
+import {rog} from '../../rog/dist/index.js';
+import {rogTitle} from '../../rog-plugin-title/dist/index.js';
+import {rogType} from '../../rog-plugin-type/dist/index.js';
+import {rogUrl} from '../../rog-plugin-url/dist/index.js';
+import {rogImage} from '../../rog-plugin-image/dist/index.js';
+import {rogImages} from '../../rog-plugin-images/dist/index.js';
+import {rogSitename} from '../../rog-plugin-sitename/dist/index.js';
+import {rogDescription} from '../../rog-plugin-description/dist/index.js';
+import {rogLocale} from '../../rog-plugin-locale/dist/index.js';
 
 test('parse utf-8 encoded HTML', async t => {
   const data = await rog('https://google.com', {

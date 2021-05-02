@@ -1,6 +1,6 @@
-const test = require('ava');
-const {rog} = require('rog');
-const {rogTitle} = require('..');
+import test from 'ava';
+import {rog} from 'rog';
+import {rogTitle} from '../dist/index.js';
 
 test('retrieve title', async t => {
   const data = await rog('https://google.co.jp/', {

@@ -17,8 +17,8 @@ $ npm install rog-plugin-title
 ## Usage
 
 ```javascript
-const {rog} = require('rog');
-const {rogTitle} = require('rog-plugin-title');
+import {rog} from 'rog';
+import {rogTitle} from 'rog-plugin-title';
 
 rog('http://google.com', {
   title: rogTitle

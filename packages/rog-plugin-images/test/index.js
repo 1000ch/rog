@@ -1,6 +1,6 @@
-const test = require('ava');
-const {rog} = require('rog');
-const {rogImages} = require('..');
+import test from 'ava';
+import {rog} from 'rog';
+import {rogImages} from '../dist/index.js';
 
 test('retrieve images', async t => {
   const data = await rog('https://google.co.jp/', {

@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "module": "commonjs",
+    "target": "es2020",
+    "module": "es2020",
     "moduleResolution": "node",
-    "lib": ["es2018", "DOM"],
+    "lib": ["es2020", "DOM"],
     "declaration": true,
     "sourceMap": true,
     "strict": true,
