@@ -39,6 +39,6 @@
     "is-binary-path": "^2.1.0",
     "is-html": "^2.0.0",
     "is-url": "^1.2.2",
-    "jschardet": "^2.1.0"
+    "jschardet": "^3.0.0"
   }
 }
