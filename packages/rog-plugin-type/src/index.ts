@@ -1,8 +1,8 @@
-import {RogPlugin, RogPluginResponse} from 'rog';
+import type {RogPlugin, RogPluginResponse} from 'rog';
 
 export const rogType: RogPlugin = ($: cheerio.Root): RogPluginResponse => {
   const records: Record<string, string> = {
-    'meta[property="og:type"]': 'content'
+    'meta[property="og:type"]': 'content',
   };
 
   for (const [query, attr] of Object.entries(records)) {

@@ -4,7 +4,7 @@ import {rogDescription} from '../dist/index.js';
 
 test('retrieve description', async t => {
   const data = await rog('https://google.co.jp/', {
-    description: rogDescription
+    description: rogDescription,
   });
 
   t.plan(1);

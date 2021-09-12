@@ -1,6 +1,7 @@
 {
   "name": "rog",
   "private": true,
+  "type": "module",
   "scripts": {
     "bootstrap": "lerna bootstrap --ci",
     "build": "lerna run build",
@@ -11,7 +12,7 @@
     "publish": "lerna publish"
   },
   "engines": {
-    "node": ">=12"
+    "node": "^14.13.1 || >=16.0.0"
   },
   "license": "MIT",
   "dependencies": {
@@ -26,12 +27,12 @@
     "rog-plugin-url": "file:packages/rog-plugin-url"
   },
   "devDependencies": {
-    "@types/cheerio": "^0.22.29",
-    "@types/is-url": "^1.2.29",
+    "@types/cheerio": "^0.22.30",
+    "@types/is-url": "^1.2.30",
     "ava": "^3.15.0",
     "lerna": "^4.0.0",
     "rog": "file:../rog",
-    "typescript": "^4.3.2",
-    "xo": "^0.40.1"
+    "typescript": "^4.4.3",
+    "xo": "^0.44.0"
   }
 }

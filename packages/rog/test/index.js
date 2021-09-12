@@ -18,7 +18,7 @@ test('parse utf-8 encoded HTML', async t => {
     images: rogImages,
     sitename: rogSitename,
     description: rogDescription,
-    locale: rogLocale
+    locale: rogLocale,
   });
 
   t.plan(8);
@@ -41,7 +41,7 @@ test('parse EUC-JP encoded HTML', async t => {
     images: rogImages,
     sitename: rogSitename,
     description: rogDescription,
-    locale: rogLocale
+    locale: rogLocale,
   });
 
   t.plan(8);
@@ -64,7 +64,7 @@ test('parse iso-8859-1 encoded HTML', async t => {
     images: rogImages,
     sitename: rogSitename,
     description: rogDescription,
-    locale: rogLocale
+    locale: rogLocale,
   });
 
   t.plan(8);
