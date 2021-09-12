@@ -1,6 +1,6 @@
 {
   "name": "rog-plugin-images",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Image URLs in HTML document plugin for rog",
   "scripts": {
     "build": "tsc",
