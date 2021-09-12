@@ -4,7 +4,7 @@ import {rogLocale} from '../dist/index.js';
 
 test('retrieve locale', async t => {
   const data = await rog('https://google.co.jp/', {
-    locale: rogLocale
+    locale: rogLocale,
   });
 
   t.plan(1);

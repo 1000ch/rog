@@ -1,10 +1,10 @@
-import {RogPlugin, RogPluginResponse} from 'rog';
+import type {RogPlugin, RogPluginResponse} from 'rog';
 
 export const rogImage: RogPlugin = ($: cheerio.Root): RogPluginResponse => {
   const records: Record<string, string> = {
     'meta[property="og:image"]': 'content',
     'meta[name="twitter:image"]': 'content',
-    'meta[name="twitter:image:src"]': 'content'
+    'meta[name="twitter:image:src"]': 'content',
   };
 
   for (const [query, attr] of Object.entries(records)) {

@@ -4,13 +4,13 @@
   "description": "Site name plugin for rog",
   "scripts": {
     "build": "tsc",
-    "test": "xo && ava --verbose"
+    "test": "ava"
   },
   "type": "module",
   "exports": "./dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": ">=12"
+    "node": "^14.13.1 || >=16.0.0"
   },
   "repository": {
     "type": "git",

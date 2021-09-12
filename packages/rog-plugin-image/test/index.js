@@ -4,7 +4,7 @@ import {rogImage} from '../dist/index.js';
 
 test('retrieve image', async t => {
   const data = await rog('https://google.co.jp/', {
-    image: rogImage
+    image: rogImage,
   });
 
   t.plan(1);

@@ -4,7 +4,7 @@ import {rogTitle} from '../dist/index.js';
 
 test('retrieve title', async t => {
   const data = await rog('https://google.co.jp/', {
-    title: rogTitle
+    title: rogTitle,
   });
 
   t.plan(1);

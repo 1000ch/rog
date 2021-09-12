@@ -4,7 +4,7 @@ import {rogType} from '../dist/index.js';
 
 test('retrieve type', async t => {
   const data = await rog('https://google.co.jp/', {
-    type: rogType
+    type: rogType,
   });
 
   t.plan(1);

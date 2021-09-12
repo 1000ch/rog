@@ -1,4 +1,4 @@
-import {RogPlugin, RogPluginResponse} from 'rog';
+import type {RogPlugin, RogPluginResponse} from 'rog';
 import isURL from 'is-url';
 
 export const rogImages: RogPlugin = ($, url): RogPluginResponse => {
