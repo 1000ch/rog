@@ -1,6 +1,6 @@
 {
   "name": "rog-plugin-url",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "URL plugin for rog",
   "scripts": {
     "build": "tsc",

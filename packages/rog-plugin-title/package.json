@@ -1,6 +1,6 @@
 {
   "name": "rog-plugin-title",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Title plugin for rog",
   "scripts": {
     "build": "tsc",

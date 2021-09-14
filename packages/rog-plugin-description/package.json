@@ -1,6 +1,6 @@
 {
   "name": "rog-plugin-description",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Site description plugin for rog",
   "scripts": {
     "build": "tsc",

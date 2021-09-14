@@ -1,6 +1,6 @@
 {
   "name": "rog-plugin-sitename",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Site name plugin for rog",
   "scripts": {
     "build": "tsc",
