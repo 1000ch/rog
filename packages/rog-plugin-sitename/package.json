@@ -36,6 +36,6 @@
     "rog": "file:../rog"
   },
   "peerDependencies": {
-    "rog": "^3.0.0"
+    "rog": "^5.0.0"
   }
 }
